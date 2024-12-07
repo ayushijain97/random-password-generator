@@ -1,0 +1,113 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: 100%;
+  }
+  
+  .generator-container {
+    background-color: antiquewhite;
+    height: 25rem;  /* 400px */
+    width: 37.5rem;  /* 600px */
+    border-radius: 1.25rem;  /* 20px */
+    padding: 1.25rem;  /* 20px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: blueviolet;
+    transition: border-color 0.3s ease-in-out;
+    overflow: scroll;
+  }
+  
+  input {
+    margin-right: 0.625rem;  /* 10px */
+    padding: 0.625rem;  /* 10px */
+    border-radius: 0.3125rem;  /* 5px */
+    border: none;
+  }
+  
+  input:focus {
+    border-color: #5a2a88;
+    outline: none;
+  }
+  
+  .generate-button {
+    background-color: blueviolet;
+    padding: 0.625rem;  /* 10px */
+    border-radius: 0.3125rem;  /* 5px */
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .generate-button:hover {
+    background-color: #4a1f6c;
+  }
+  
+  .reset-button {
+    background-color: white;
+    padding: 0.625rem;  /* 10px */
+    border-radius: 0.3125rem;  /* 5px */
+    border: none;
+    color: black;
+    cursor: pointer;
+    margin-right: 1.25rem;  /* 20px */
+  }
+  
+  .checkbox-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1.25rem;  /* 20px */
+  }
+  
+  .checkbox-container p {
+    margin-bottom: 0.625rem;  /* 10px */
+    font-size: 0.75rem;  /* 12px */
+    font-weight: 500;
+  }
+  
+  .checkbox-container label {
+    font-size: 1rem;  /* 16px */
+    margin-left: 0.5rem;  /* 8px */
+  }
+  
+  input[type="checkbox"] {
+    transform: scale(1.2);
+  }
+  
+  .password-display {
+    margin-bottom: 3.125rem;  /* 50px */
+    word-break: break-word;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    background-color: white;
+    padding: 0.9375rem;  /* 15px */
+    border-radius: 1.25rem;  /* 20px */
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);  /* 10px */
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #5a2a88;
+    border-color: #5a2a88;
+  }
+  
+  .password-length-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .random-password-container {
+    width: 18.75rem;  /* 300px */
+  }
+  
+  /* Additional inline styles converted */
+  label[for="passwordLength"] {
+    font-size: 0.75rem;  /* 12px */
+    margin-bottom: 0.375rem;  /* 6px */
+  }
