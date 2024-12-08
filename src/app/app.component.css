@@ -127,7 +127,7 @@
   .customize-password{
     margin-top: 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px; /* Space between grid items */
   }
 
@@ -139,4 +139,16 @@
 
   input[type="checkbox"]:checked {
     accent-color: #d22; /* Changes the default checkbox color */
+  }
+
+  .custom-slider {
+    width: 60%;
+  }
+
+  ::ng-deep .custom-slider .mdc-slider__track--active_fill {
+    border-color: #d22 !important;
+  }
+
+  ::ng-deep .custom-slider .mdc-slider__thumb-knob {
+    border-color: #d22;
   }

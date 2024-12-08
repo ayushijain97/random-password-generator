@@ -30,19 +30,22 @@
             [(ngModel)]="passwordLength"
             min="1"
             max="30"
-            style="width: 50%; margin-top: 10px"
+            style="width: 50%; margin-top: 10px; margin-bottom: 10px;"
             (change)="generatePassword()"
+            (tab)="generatePassword()"
           />
-        </div>
-          <mat-slider min="0" max="30" step="1">
-            <input matSliderThumb [(ngModel)]="passwordLength">
+          <mat-slider min="1" max="30" step="1" color="accent" class="custom-slider" >
+            <input matSliderThumb [(ngModel)]="passwordLength" (input)="generatePassword()" />
           </mat-slider>
+        </div>
+         
         <div class="checkbox-container">
           <div class="checkbox">
             <input
               type="checkbox"
               [(ngModel)]="characterSets.alphabet"
               id="alphabet"
+              (change)="generatePassword()"
             />
             <label for="alphabet">Alphabets</label>
           </div>
@@ -51,6 +54,7 @@
               type="checkbox"
               [(ngModel)]="characterSets.numbers"
               id="numbers"
+              (change)="generatePassword()"
             />
             <label for="numbers">Numbers</label>
           </div>
@@ -59,6 +63,7 @@
               type="checkbox"
               [(ngModel)]="characterSets.specialCharacters"
               id="specialCharacters"
+              (change)="generatePassword()"
             />
             <label for="specialCharacters">Symbols</label>
           </div>
