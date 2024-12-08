@@ -12,7 +12,7 @@ import { MatSliderModule } from '@angular/material/slider';
 })
 export class AppComponent {
   title = 'random-password-generator';
-  passwordLength = 10;
+  passwordLength: number = 10;
   randomPassword = '';
   characterSets = {
     alphabet: false,
@@ -72,5 +72,32 @@ export class AppComponent {
 
   onSliderInput(event: any) {
     this.passwordLength = event.value; // Update value on slider move
+  }
+
+  preventNegative(event: KeyboardEvent) {
+
+    const currentValue = this.passwordLength;
+    
+    if (this.passwordLength < 6) {
+      this.passwordLength = 6;
+    } else if (this.passwordLength > 30) {
+      this.passwordLength = 30;
+    }
+
+    // Prevent the "-" key for negative values
+    if (event.key === '-' || event.key === 'e') {
+      event.preventDefault();
+    }
+
+    if (event.key === 'Backspace' && this.passwordLength < 10 && this.passwordLength.toString().length === 1) {
+      // If the password length is a single digit and the user presses backspace, prevent it
+        event.preventDefault();
+    }
+
+    if (this.passwordLength > 31) {
+      event.preventDefault();
+    }
+
+    
   }
 }

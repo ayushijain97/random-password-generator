@@ -28,13 +28,14 @@
             type="number"
             placeholder="Enter Length"
             [(ngModel)]="passwordLength"
-            min="1"
+            min="6"
             max="30"
             style="width: 50%; margin-top: 10px; margin-bottom: 10px;"
             (change)="generatePassword()"
             (tab)="generatePassword()"
+            (keydown)="preventNegative($event)"
           />
-          <mat-slider min="1" max="30" step="1" color="accent" class="custom-slider" >
+          <mat-slider min="6" max="30" step="1" color="accent" class="custom-slider" >
             <input matSliderThumb [(ngModel)]="passwordLength" (input)="generatePassword()" />
           </mat-slider>
         </div>
