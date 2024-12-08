@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSliderModule } from '@angular/material/slider';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, MatIconModule],
+  imports: [RouterOutlet, FormsModule, MatIconModule, MatSliderModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -67,5 +68,9 @@ export class AppComponent {
 
   copyPassword() {
     navigator.clipboard.writeText(this.randomPassword);
+  }
+
+  onSliderInput(event: any) {
+    this.passwordLength = event.value; // Update value on slider move
   }
 }

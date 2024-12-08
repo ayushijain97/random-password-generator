@@ -2,28 +2,41 @@
   <div class="generator-container">
     <div class="password-preview-container">
       <h1>{{ randomPassword }}</h1>
-      <div style="font-size: 27px; display: flex;">
-        <mat-icon style="margin-right: 10px; cursor: pointer;" (click)="copyPassword()">content_copy</mat-icon>
-        <mat-icon role="button" (click)="generatePassword()" style="cursor: pointer;">autorenew</mat-icon>
+      <div style="font-size: 27px; display: flex">
+        <mat-icon
+          style="margin-right: 10px; cursor: pointer"
+          (click)="copyPassword()"
+          >content_copy</mat-icon
+        >
+        <mat-icon
+          role="button"
+          (click)="generatePassword()"
+          style="cursor: pointer"
+          >autorenew</mat-icon
+        >
       </div>
     </div>
     <div class="customize-password-container">
       <h2 style="margin-bottom: 0px">Customize your password</h2>
       <hr style="background-color: rgb(173, 172, 172)" />
       <div class="customize-password">
-        <div style="display: flex; flex-direction: column;">
-          <label
-            for="passwordLength"
-            style="font-size: 14px;"
+        <div style="display: flex; flex-direction: column">
+          <label for="passwordLength" style="font-size: 14px"
             >Password Length</label
           >
           <input
             type="number"
             placeholder="Enter Length"
             [(ngModel)]="passwordLength"
-            style="width: 50%; margin-top: 10px;"
+            min="1"
+            max="30"
+            style="width: 50%; margin-top: 10px"
+            (change)="generatePassword()"
           />
         </div>
+          <mat-slider min="0" max="30" step="1">
+            <input matSliderThumb [(ngModel)]="passwordLength">
+          </mat-slider>
         <div class="checkbox-container">
           <div class="checkbox">
             <input
