@@ -1,47 +1,55 @@
 <div class="container">
   <div class="generator-container">
-    <h1>Random Password Generator</h1>
-    <div class="random-password-container">
-      <div class="password-display">
-        {{ randomPassword }}
+    <div class="password-preview-container">
+      <h1>{{ randomPassword }}</h1>
+      <div style="font-size: 27px; display: flex;">
+        <mat-icon style="margin-right: 10px; cursor: pointer;" (click)="copyPassword()">content_copy</mat-icon>
+        <mat-icon role="button" (click)="generatePassword()" style="cursor: pointer;">autorenew</mat-icon>
       </div>
-      <div class="password-length-container">
-        <label for="passwordLength" style="font-size: 12px; margin-bottom: 6px"
-          >Password Length</label
-        >
-        <div>
+    </div>
+    <div class="customize-password-container">
+      <h2 style="margin-bottom: 0px">Customize your password</h2>
+      <hr style="background-color: rgb(173, 172, 172)" />
+      <div class="customize-password">
+        <div style="display: flex; flex-direction: column;">
+          <label
+            for="passwordLength"
+            style="font-size: 14px;"
+            >Password Length</label
+          >
           <input
             type="number"
             placeholder="Enter Length"
             [(ngModel)]="passwordLength"
-            style="width: 100%"
+            style="width: 50%; margin-top: 10px;"
           />
         </div>
-      </div>
-      <div class="checkbox-container">
-        <p>Character Sets:</p>
-        <div>
-          <input type="checkbox" [(ngModel)]="characterSets.alphabet" id="alphabet" />
-          <label for="alphabet">ABC</label>
+        <div class="checkbox-container">
+          <div class="checkbox">
+            <input
+              type="checkbox"
+              [(ngModel)]="characterSets.alphabet"
+              id="alphabet"
+            />
+            <label for="alphabet">Alphabets</label>
+          </div>
+          <div class="checkbox">
+            <input
+              type="checkbox"
+              [(ngModel)]="characterSets.numbers"
+              id="numbers"
+            />
+            <label for="numbers">Numbers</label>
+          </div>
+          <div class="checkbox">
+            <input
+              type="checkbox"
+              [(ngModel)]="characterSets.specialCharacters"
+              id="specialCharacters"
+            />
+            <label for="specialCharacters">Symbols</label>
+          </div>
         </div>
-        <div>
-          <input type="checkbox" [(ngModel)]="characterSets.numbers" id="numbers" />
-          <label for="numbers">123</label>
-        </div>
-        <div >
-          <input
-            type="checkbox"
-            [(ngModel)]="characterSets.specialCharacters"
-            id="specialCharacters"
-          />
-          <label for="specialCharacters">!#$</label> 
-        </div>
-      </div>
-      <div>
-        <button class="reset-button" (click)="resetPassword()" style="width: 45%;">Reset</button>
-        <button class="generate-button" (click)="generatePassword()" style="width: 45%;">
-          Generate
-        </button>
       </div>
     </div>
   </div>

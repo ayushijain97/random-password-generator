@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule],
+  imports: [RouterOutlet, FormsModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -64,13 +65,7 @@ export class AppComponent {
     this.randomPassword = password;
   }
 
-  resetPassword() {
-    this.passwordLength = 10;
-    this.characterSets = {
-      alphabet: false,
-      numbers: true,  
-      specialCharacters: false,
-    }
-    this.generatePassword()
+  copyPassword() {
+    navigator.clipboard.writeText(this.randomPassword);
   }
 }
