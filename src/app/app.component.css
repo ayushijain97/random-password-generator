@@ -8,19 +8,19 @@
   }
   
   .generator-container {
-    height: 25rem;  /* 400px */
-    width: 43.75rem; /* 700px */
-    border-radius: 1.25rem;  /* 20px */
-    padding: 1.25rem;  /* 20px */
+    height: 25rem;  /* 25rem */
+    width: 43.75rem; /* 43.75rem */
+    border-radius: 1.25rem;  /* 1.25rem */
+    padding: 1.25rem;  /* 1.25rem */
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
   input {
-    margin-right: 0.625rem;  /* 10px */
-    padding: 0.625rem;  /* 10px */
-    border-radius: 0.3125rem;  /* 5px */
+    margin-right: 0.625rem;  /* .625rem */
+    padding: 0.625rem;  /* .625rem */
+    border-radius: 0.3125rem;  /* .3125rem */
     border: none;
     box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); 
   }
@@ -32,8 +32,8 @@
   
   .generate-button {
     background-color: blueviolet;
-    padding: 0.625rem;  /* 10px */
-    border-radius: 0.3125rem;  /* 5px */
+    padding: 0.625rem;  /* .625rem */
+    border-radius: 0.3125rem;  /* .3125rem */
     border: none;
     color: white;
     cursor: pointer;
@@ -45,12 +45,12 @@
   
   .reset-button {
     background-color: white;
-    padding: 0.625rem;  /* 10px */
-    border-radius: 0.3125rem;  /* 5px */
+    padding: 0.625rem;  /* .625rem */
+    border-radius: 0.3125rem;  /* .3125rem */
     border: none;
     color: black;
     cursor: pointer;
-    margin-right: 1.25rem;  /* 20px */
+    margin-right: 1.25rem;  /* 1.25rem */
   }
   
   .checkbox-container {
@@ -58,52 +58,52 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 1.25rem;  /* 20px */
+    margin-bottom: 1.25rem;  /* 1.25rem */
   }
   
   .checkbox-container p {
-    margin-bottom: 0.625rem;  /* 10px */
+    margin-bottom: 0.625rem;  /* .625rem */
     font-weight: 500;
-    margin: 0px;
+    margin: 0rem;
   }
   
   .checkbox-container label {
-    font-size: 1rem;  /* 16px */
-    margin-left: 0.5rem;  /* 8px */
+    font-size: 1rem;  /* 1rem */
+    margin-left: 0.5rem;  /* .5rem */
   }
   
   input[type="checkbox"] {
     transform: scale(1.2);
-    width: 20px;
-    height: 20px;
+    width: 1.25rem;
+    height: 1.25rem;
     cursor: pointer;
   }
   
   .password-display {
-    margin-bottom: 3.125rem;  /* 50px */
+    margin-bottom: 3.125rem;  /* 3.125rem */
     word-break: break-word;
     font-weight: bold;
     font-size: 1.2rem;
     color: #333;
     background-color: white;
-    padding: 0.9375rem;  /* 15px */
-    border-radius: 1.25rem;  /* 20px */
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);  /* 10px */
+    padding: 0.9375rem;  /* .9375rem */
+    border-radius: 1.25rem;  /* 1.25rem */
+    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);  /* .625rem */
   }
 
   
   /* Additional inline styles converted */
   label[for="passwordLength"] {
-    font-size: 0.75rem;  /* 12px */
-    margin-bottom: 0.375rem;  /* 6px */
+    font-size: 0.75rem;  /* .75rem */
+    margin-bottom: 0.375rem;  /* .375rem */
   }
 
   .password-preview-container {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
     background-color: white;
-    border-radius: 20px 20px 0px 0px;
-    padding: 0px 50px;
+    border-radius: 1.25rem;
+    padding: 0 3.125rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -111,28 +111,28 @@
   }
 
   .password-preview-container h1{
-    font-size: 30px;
+    font-size: 1.875rem;
     overflow-x: auto;
-    margin-right: 10px;
+    margin-right: .625rem;
   }
 
   .customize-password-container{
     width: 100%;
     background-color: white;
-    padding: 20px 50px;
-    border-radius: 20px;
+    padding: 1.25rem 3.125rem;
+    border-radius: 1.25rem;
     box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); 
   }
 
   .customize-password{
-    margin-top: 30px;
+    margin-top: 1.875rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px; /* Space between grid items */
+    gap: 3.125rem; /* Space between grid items */
   }
 
   .checkbox {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     display: flex;
     align-items: center;
   }

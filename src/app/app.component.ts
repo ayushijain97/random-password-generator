@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider';
+import { PASSWORD_CONSTRAINTS, PASSWORD_SETS } from './password.constant';
 
 @Component({
   selector: 'app-root',
@@ -19,37 +20,37 @@ export class AppComponent {
     numbers: true,
     specialCharacters: false,
   };
+  copyIcon = false;
+
   ngOnInit() {
+    // Generate a random password on component initialization
     this.generatePassword()
   }
+
   generatePassword() {
     // Start fresh by resetting the password
     this.randomPassword = '';
 
-    // Define character sets for the password
-    const alphabetSet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Alphabet characters
-    const numberSet = '0123456789'; // Numeric characters
-    const specialCharacterSet = '!@#$%^&*()_+[]{}|;:,.<>?'; // Special characters
-
+  
     // Initialize an empty pool to hold all the possible characters for the password
     let availableCharacters = '';
 
     // Add the respective sets to the pool if the user has selected the option
     if (this.characterSets.alphabet) {
-      availableCharacters += alphabetSet; // Include alphabet characters if selected
+      availableCharacters += PASSWORD_SETS.ALPHABET; // Include alphabet characters if selected
     }
     if (this.characterSets.numbers) {
-      availableCharacters += numberSet; // Include numeric characters if selected
+      availableCharacters += PASSWORD_SETS.NUMBERS; // Include numeric characters if selected
     }
     if (this.characterSets.specialCharacters) {
-      availableCharacters += specialCharacterSet; // Include special characters if selected
+      availableCharacters += PASSWORD_SETS.SPECIAL; // Include special characters if selected
     }
 
-    // If no options are selected, provide a reminder to the user
+    // If no options are selected, give a reminder to the user
     if (!availableCharacters) {
       this.randomPassword =
         'Please select at least one option to generate a password.';
-      return; // Exit the function early since we can't generate a password without any options
+      return;
     }
 
     // Now that we have a valid pool of characters, let's generate the password
@@ -66,38 +67,31 @@ export class AppComponent {
     this.randomPassword = password;
   }
 
-  copyPassword() {
-    navigator.clipboard.writeText(this.randomPassword);
+  async copyPassword(): Promise<void> {
+    try {
+      await navigator.clipboard.writeText(this.randomPassword);
+      this.copyIcon = true;
+      setTimeout(() => this.copyIcon = false, 2000);
+    } catch (error) {
+      console.error('Failed to copy password:', error);
+    }
   }
-
+  
   onSliderInput(event: any) {
     this.passwordLength = event.value; // Update value on slider move
   }
 
-  preventNegative(event: KeyboardEvent) {
-
-    const currentValue = this.passwordLength;
-    
-    if (this.passwordLength < 6) {
-      this.passwordLength = 6;
-    } else if (this.passwordLength > 30) {
-      this.passwordLength = 30;
+  preventNegative(event: KeyboardEvent): void {
+    const invalidKeys = ['-', 'e'];
+    if (invalidKeys.includes(event.key)) {
+      event.preventDefault();
+      return;
     }
-
-    // Prevent the "-" key for negative values
-    if (event.key === '-' || event.key === 'e') {
+  
+    const newValue = Number(this.passwordLength);
+    if (newValue < PASSWORD_CONSTRAINTS.MIN_LENGTH || 
+        newValue > PASSWORD_CONSTRAINTS.MAX_LENGTH) {
       event.preventDefault();
     }
-
-    if (event.key === 'Backspace' && this.passwordLength < 10 && this.passwordLength.toString().length === 1) {
-      // If the password length is a single digit and the user presses backspace, prevent it
-        event.preventDefault();
-    }
-
-    if (this.passwordLength > 31) {
-      event.preventDefault();
-    }
-
-    
   }
 }
