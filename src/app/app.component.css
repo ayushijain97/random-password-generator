@@ -1,154 +1,154 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    height: 100%;
-    background-color: #f0f2f5;
-  }
-  
-  .generator-container {
-    height: 25rem;  /* 25rem */
-    width: 43.75rem; /* 43.75rem */
-    border-radius: 1.25rem;  /* 1.25rem */
-    padding: 1.25rem;  /* 1.25rem */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  input {
-    margin-right: 0.625rem;  /* .625rem */
-    padding: 0.625rem;  /* .625rem */
-    border-radius: 0.3125rem;  /* .3125rem */
-    border: none;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); 
-  }
-  
-  input:focus {
-    border-color: #5a2a88;
-    outline: none;
-  }
-  
-  .generate-button {
-    background-color: blueviolet;
-    padding: 0.625rem;  /* .625rem */
-    border-radius: 0.3125rem;  /* .3125rem */
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .generate-button:hover {
-    background-color: #4a1f6c;
-  }
-  
-  .reset-button {
-    background-color: white;
-    padding: 0.625rem;  /* .625rem */
-    border-radius: 0.3125rem;  /* .3125rem */
-    border: none;
-    color: black;
-    cursor: pointer;
-    margin-right: 1.25rem;  /* 1.25rem */
-  }
-  
-  .checkbox-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 1.25rem;  /* 1.25rem */
-  }
-  
-  .checkbox-container p {
-    margin-bottom: 0.625rem;  /* .625rem */
-    font-weight: 500;
-    margin: 0rem;
-  }
-  
-  .checkbox-container label {
-    font-size: 1rem;  /* 1rem */
-    margin-left: 0.5rem;  /* .5rem */
-  }
-  
-  input[type="checkbox"] {
-    transform: scale(1.2);
-    width: 1.25rem;
-    height: 1.25rem;
-    cursor: pointer;
-  }
-  
-  .password-display {
-    margin-bottom: 3.125rem;  /* 3.125rem */
-    word-break: break-word;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #333;
-    background-color: white;
-    padding: 0.9375rem;  /* .9375rem */
-    border-radius: 1.25rem;  /* 1.25rem */
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);  /* .625rem */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  background-color: #f0f2f5;
+  padding-top: 200px;
+}
 
-  
-  /* Additional inline styles converted */
-  label[for="passwordLength"] {
-    font-size: 0.75rem;  /* .75rem */
-    margin-bottom: 0.375rem;  /* .375rem */
-  }
+.generator-container {
+  height: 25rem; /* 25rem */
+  width: 43.75rem; /* 43.75rem */
+  border-radius: 1.25rem; /* 1.25rem */
+  padding: 1.25rem; /* 1.25rem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .password-preview-container {
-    width: 100%;
-    margin-bottom: 1.875rem;
-    background-color: white;
-    border-radius: 1.25rem;
-    padding: 0 3.125rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); 
-  }
+input {
+  margin-right: 0.625rem; /* .625rem */
+  padding: 0.625rem; /* .625rem */
+  border-radius: 0.3125rem; /* .3125rem */
+  border: none;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
 
-  .password-preview-container h1{
-    font-size: 1.875rem;
-    overflow-x: auto;
-    margin-right: .625rem;
-  }
+input:focus {
+  border-color: #5a2a88;
+  outline: none;
+}
 
-  .customize-password-container{
-    width: 100%;
-    background-color: white;
-    padding: 1.25rem 3.125rem;
-    border-radius: 1.25rem;
-    box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); 
-  }
+.generate-button {
+  background-color: blueviolet;
+  padding: 0.625rem; /* .625rem */
+  border-radius: 0.3125rem; /* .3125rem */
+  border: none;
+  color: white;
+  cursor: pointer;
+}
 
-  .customize-password{
-    margin-top: 1.875rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.125rem; /* Space between grid items */
-  }
+.generate-button:hover {
+  background-color: #4a1f6c;
+}
 
-  .checkbox {
-    margin-bottom: 1.25rem;
-    display: flex;
-    align-items: center;
-  }
+.reset-button {
+  background-color: white;
+  padding: 0.625rem; /* .625rem */
+  border-radius: 0.3125rem; /* .3125rem */
+  border: none;
+  color: black;
+  cursor: pointer;
+  margin-right: 1.25rem; /* 1.25rem */
+}
 
-  input[type="checkbox"]:checked {
-    accent-color: #d22; /* Changes the default checkbox color */
-  }
+.checkbox-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1.25rem; /* 1.25rem */
+}
 
-  .custom-slider {
-    width: 60%;
-  }
+.checkbox-container p {
+  margin-bottom: 0.625rem; /* .625rem */
+  font-weight: 500;
+  margin: 0rem;
+}
 
-  ::ng-deep .custom-slider .mdc-slider__track--active_fill {
-    border-color: #d22 !important;
-  }
+.checkbox-container label {
+  font-size: 1rem; /* 1rem */
+  margin-left: 0.5rem; /* .5rem */
+}
 
-  ::ng-deep .custom-slider .mdc-slider__thumb-knob {
-    border-color: #d22;
-  }
+input[type="checkbox"] {
+  transform: scale(1.2);
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+.password-display {
+  margin-bottom: 3.125rem; /* 3.125rem */
+  word-break: break-word;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+  background-color: white;
+  padding: 0.9375rem; /* .9375rem */
+  border-radius: 1.25rem; /* 1.25rem */
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1); /* .625rem */
+}
+
+/* Additional inline styles converted */
+label[for="passwordLength"] {
+  font-size: 0.75rem; /* .75rem */
+  margin-bottom: 0.375rem; /* .375rem */
+}
+
+.password-preview-container {
+  width: 100%;
+  margin-bottom: 1.875rem;
+  background-color: white;
+  border-radius: 1.25rem;
+  padding: 0 3.125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.password-preview-container h1 {
+  font-size: 1.875rem;
+  overflow-x: auto;
+  margin-right: 0.625rem;
+}
+
+.customize-password-container {
+  width: 100%;
+  background-color: white;
+  padding: 1.25rem 3.125rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.customize-password {
+  margin-top: 1.875rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.125rem; /* Space between grid items */
+}
+
+.checkbox {
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: #d22; /* Changes the default checkbox color */
+}
+
+.custom-slider {
+  width: 60%;
+}
+
+::ng-deep .custom-slider .mdc-slider__track--active_fill {
+  border-color: #d22 !important;
+}
+
+::ng-deep .custom-slider .mdc-slider__thumb-knob {
+  border-color: #d22;
+}

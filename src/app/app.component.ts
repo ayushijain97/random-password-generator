@@ -24,14 +24,13 @@ export class AppComponent {
 
   ngOnInit() {
     // Generate a random password on component initialization
-    this.generatePassword()
+    this.generatePassword();
   }
 
   generatePassword() {
     // Start fresh by resetting the password
     this.randomPassword = '';
 
-  
     // Initialize an empty pool to hold all the possible characters for the password
     let availableCharacters = '';
 
@@ -71,27 +70,25 @@ export class AppComponent {
     try {
       await navigator.clipboard.writeText(this.randomPassword);
       this.copyIcon = true;
-      setTimeout(() => this.copyIcon = false, 2000);
+      setTimeout(() => (this.copyIcon = false), 2000);
     } catch (error) {
       console.error('Failed to copy password:', error);
     }
   }
-  
+
   onSliderInput(event: any) {
     this.passwordLength = event.value; // Update value on slider move
   }
 
-  preventNegative(event: KeyboardEvent): void {
-    const invalidKeys = ['-', 'e'];
-    if (invalidKeys.includes(event.key)) {
-      event.preventDefault();
-      return;
+  validateAndUpdateLength() {
+    let value = parseInt(this.passwordLength.toString());
+
+    if (isNaN(value)) {
+      this.passwordLength = 1;
+    } else {
+      // Clamp the value between 6 and 30
+      this.passwordLength = Math.min(Math.max(value, 1), 30);
     }
-  
-    const newValue = Number(this.passwordLength);
-    if (newValue < PASSWORD_CONSTRAINTS.MIN_LENGTH || 
-        newValue > PASSWORD_CONSTRAINTS.MAX_LENGTH) {
-      event.preventDefault();
-    }
+    this.generatePassword();
   }
 }
