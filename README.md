@@ -1,13 +1,14 @@
 # RandomPasswordGenerator
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+![Password Generator Demo](./public/Random-Password-Generator.gif)
 
-## Development server
+## Quick Start
 
 To start a local development server, run:
 
 ```bash
-ng serve
+npm install
+npm start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
